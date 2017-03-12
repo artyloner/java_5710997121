@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SCElab5umlclassdiagram">
+  <ClassDiagramComponents>
+    <Class name="BuyStock" package="lab5" visibility="public" xPosition="51.0" yPosition="259.0">
+      <Fields>
+        <Field name="stock" type="Stock" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="execute" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SellStock" package="lab5" visibility="public" xPosition="257.0" yPosition="259.0">
+      <Fields>
+        <Field name="stock" type="Stock" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="execute" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Stock" package="lab5" visibility="public" xPosition="366.0" yPosition="27.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="quantity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="buy" returnType="void" visibility="public"/>
+        <Method name="sell" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Broker" package="lab5" visibility="public" xPosition="615.0" yPosition="259.0">
+      <Fields>
+        <Field name="orders" type="List" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="takeOrder" returnType="void" visibility="public"/>
+        <Method name="placeOrdersl" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CommandPatternDemo" package="lab5" visibility="public" xPosition="615.0" yPosition="27.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Interface name="Order" package="lab5" visibility="public" xPosition="51.0" yPosition="27.0">
+      <Methods>
+        <Method name="execute" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="lab5.SellStock" target="lab5.Order"/>
+    <UseRelation name="uses" source="lab5.CommandPatternDemo" target="lab5.Stock" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="uses" source="lab5.Broker" target="lab5.Order" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="uses" source="lab5.CommandPatternDemo" target="lab5.Broker" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="lab5.BuyStock" target="lab5.Order"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
